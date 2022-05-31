@@ -2,9 +2,7 @@ const { spawn } = require('child_process')
 let symlinkPackages = (bundles = []) => {
     const child = spawn('npm', [
         `link`,
-        '@riadhossain43/pkg-one',
-        '@riadhossain43/pkg-three',
-        // ...bundles
+        ...bundles
     ])
     child.stderr.on('data', data => {
         console.info('info:')
