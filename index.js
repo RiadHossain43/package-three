@@ -2,7 +2,9 @@ const { spawn } = require('child_process')
 let runScript = (bundles = []) => {
     const child = spawn('npm', [
         `link`,
-        ...bundles
+        '@riadhossain43/pkg-one',
+        '@riadhossain43/pkg-three',
+        // ...bundles
     ])
     child.stderr.on('data', data => {
         console.info('info:')
