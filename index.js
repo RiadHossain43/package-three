@@ -1,11 +1,10 @@
 const { spawn } = require('child_process')
-const path = require('path')
-const { bundles } = require('./imsbundles.json')
-let runScript = () => {
+let runScript = (bundles = []) => {
     const child = spawn('npm', [
         `link`,
         '@riadhossain43/pkg-one',
-        '@riadhossain43/pkg-one'
+        '@riadhossain43/pkg-three',
+        ...bundles
     ])
     child.stderr.on('data', data => {
         console.info('info:')
