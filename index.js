@@ -22,4 +22,6 @@ let runScript = (bundles = []) => {
         else console.info("Local linking successfull.")
     })
 }
-runScript()
+module.exports = {
+    runScript
+}
