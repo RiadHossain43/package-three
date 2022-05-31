@@ -1,5 +1,5 @@
 const { spawn } = require('child_process')
-let symlinkPackages = (bundles = []) => {
+let runScript = (bundles = []) => {
     const child = spawn('npm', [
         `link`,
         ...bundles
@@ -21,5 +21,5 @@ let symlinkPackages = (bundles = []) => {
     })
 }
 module.exports = {
-    symlinkPackages
+    runScript
 }
